@@ -3,12 +3,12 @@
 USE_PROCD=1
 START=99
 
-BIN=/usr/sbin/xttyd
+BIN=/usr/sbin/rtty
 
 start_service() {
-    host=$(uci get xttyd.@server[0].host)
-    port=$(uci get xttyd.@server[0].port)
-    interface=$(xttyd.@device[0].interface)
+    host=$(uci get rtty.@server[0].host)
+    port=$(uci get rtty.@server[0].port)
+    interface=$(uci get rtty.@device[0].interface)
     ifname=$(uci -p /var/state get network.$interface.ifname)
 	procd_open_instance
 	procd_set_param command $BIN -h $host -p $port -i $ifname

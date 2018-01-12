@@ -1,2 +1,2 @@
 # xttyd-feed
-openwrt feed for xttyd
+openwrt feed for rtty
